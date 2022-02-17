@@ -15,11 +15,6 @@ public class EmployeeSystemTest {
         employeeSystemObject = new EmployeeSystem();
 
     }
-    @AfterEach
-    public void clearEmployeeSystem() {
-        employeeSystemObject.employeeList.clear();
-    }
-
     @Test
     public void checkCreateEmployeeSystem() {
         EmployeeSystem testSystem;
@@ -181,12 +176,11 @@ public class EmployeeSystemTest {
 
     @Test
     public void removeEmployeeAdditionalTests() {
+
         Employee newEmployee = new Employee("Joakim",30, 100);
         employeeSystemObject.addNewEmployee(newEmployee);
 
-        for(int i = 0; i < employeeSystemObject.employeeList.size(); i++) {
-            employeeSystemObject.removeEmployee(employeeSystemObject.employeeList.size() - 1);
-        }
+        employeeSystemObject.removeEmployee(employeeSystemObject.employeeList.get(0).getId());
         assertEquals(Collections.EMPTY_LIST, employeeSystemObject.employeeList);
     }
 
