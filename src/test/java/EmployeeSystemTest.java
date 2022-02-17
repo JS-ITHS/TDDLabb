@@ -131,7 +131,7 @@ public class EmployeeSystemTest {
             Employee newEmployee = new Employee("Adam Ant",25, 100);
             employeeSystemObject.addNewEmployee(newEmployee);
 
-        employeeSystemObject.raiseIndividualSalary(input);
+        employeeSystemObject.raiseIndividualSalary(input,1);
         double expected = 100 + (100 * (input/100));
         double actual = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getSalary();
 
