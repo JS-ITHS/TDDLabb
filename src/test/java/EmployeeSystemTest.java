@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeSystemTest {
@@ -84,6 +87,21 @@ public class EmployeeSystemTest {
 
             assertTrue(raisedSalaryByTenPercentage);
         }
+    }
+
+    @ParameterizedTest
+    @ValueSource (doubles = {-1,-10,-100.5,-150000,-999.98})
+
+    public void checkRaiseSalaryByNegativeValue(double input) {
+
+        Employee newEmployee = new Employee("A B",30, 100);
+        employeeSystemObject.addNewEmployee(newEmployee);
+
+        employeeSystemObject.raiseSalary(input);
+        double expected = 100;
+        double actual = employeeSystemObject.employeeList.get(0).getSalary();
+
+        assertEquals(expected,actual);
     }
 
 
