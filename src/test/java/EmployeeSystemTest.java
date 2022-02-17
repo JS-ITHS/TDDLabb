@@ -66,4 +66,14 @@ public class EmployeeSystemTest {
         assertFalse(iDFiveExists);
     }
 
+    @Test
+    public void checkRaiseSalary() {
+        for(int i = 0; i<10;i++) {
+            Employee newEmployee = new Employee("Adam Ant",i, 100);
+            employeeSystemObject.addNewEmployee(newEmployee);
+        }
+
+        employeeSystemObject.raiseSalary(10);
+    }
+
 }
