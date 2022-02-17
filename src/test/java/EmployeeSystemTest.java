@@ -124,7 +124,7 @@ public class EmployeeSystemTest {
         assertFalse(salaryIsRaised);
     }
 
-    @ParameterizedTest Test
+    @ParameterizedTest
     @ValueSource (doubles = {1,10,10.1,50,99})
     public void checkRaiseSalaryIndividualEmployee(double input) {
 
