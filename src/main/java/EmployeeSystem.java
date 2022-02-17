@@ -17,4 +17,8 @@ public class EmployeeSystem {
             }
         }
     }
+
+    public void raiseSalary(double i) {
+
+    }
 }
