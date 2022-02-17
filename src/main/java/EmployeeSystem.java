@@ -10,8 +10,8 @@ public class EmployeeSystem {
     }
 
     public void removeEmployee(int id) {
-        for(int i = 0; i < employeeList.size();i++) {
-            if(employeeList.get(i).getId() == id) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId() == id) {
                 employeeList.remove(i);
                 break;
             }
@@ -20,7 +20,7 @@ public class EmployeeSystem {
 
     public void raiseSalary(double salaryIncreasePercentage) {
 
-        if(salaryIncreasePercentage > 0 && salaryIncreasePercentage <= 100) {
+        if (salaryIncreasePercentage > 0 && salaryIncreasePercentage <= 100) {
             for (int i = 0; i < employeeList.size(); i++) {
                 double newSalary = employeeList.get(i).getSalary() + (employeeList.get(i).getSalary() * (salaryIncreasePercentage / 100));
                 employeeList.get(i).setSalary(newSalary);

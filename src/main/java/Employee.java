@@ -3,7 +3,7 @@ public class Employee {
     private String name;
     private int age;
     private int id;
-    private static int idCounter =0;
+    private static int idCounter = 0;
     private double salary;
 
 

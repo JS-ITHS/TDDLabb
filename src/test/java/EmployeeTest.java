@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class EmployeeTest {
 
@@ -28,9 +29,9 @@ class EmployeeTest {
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void createEmployee() {
-        //employeeObject = new Employee(); Removed when creating constructor.
         assertInstanceOf(Employee.class, employeeObject);
     }
 
