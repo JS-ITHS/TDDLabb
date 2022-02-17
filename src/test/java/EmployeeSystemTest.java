@@ -155,7 +155,7 @@ public class EmployeeSystemTest {
     }
 
     @ParameterizedTest
-    @ValueSource (doubles = {-0.1,-10,-15.5,-90.9987,Double.MIN_VALUE})
+    @ValueSource (doubles = {-0.1,-10,-15.5,-90.9987,-10000.57})
     public void checkRaiseSalaryIndividualEmployeeNegativeValue(double input) {
 
         for(int i = 0; i<10;i++) {

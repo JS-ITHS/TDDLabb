@@ -30,7 +30,7 @@ public class EmployeeSystem {
 
     public void raiseIndividualSalary(double salaryIncreasePercentage, int employeeId) {
 
-        if (salaryIncreasePercentage <= 100) {
+        if (salaryIncreasePercentage <= 100 && salaryIncreasePercentage > 0) {
             for (int i = 0; i < employeeList.size(); i++) {
                 if (employeeList.get(i).getId() == employeeId) {
                     double newSalary = employeeList.get(i).getSalary() + (employeeList.get(i).getSalary() * (salaryIncreasePercentage / 100));
