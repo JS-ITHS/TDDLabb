@@ -128,12 +128,14 @@ public class EmployeeSystemTest {
     @ValueSource (doubles = {1,10,10.1,50,99})
     public void checkRaiseSalaryIndividualEmployee(double input) {
 
-        for(int i = 0; i<10;i++) {
-            Employee newEmployee = new Employee("Adam Ant",i, 100);
+            Employee newEmployee = new Employee("Adam Ant",25, 100);
             employeeSystemObject.addNewEmployee(newEmployee);
-        }
-        employeeSystemObject.raiseIndividualSalary(10);
 
+        employeeSystemObject.raiseIndividualSalary(input);
+        double expected = 100 + (100 * (input/100));
+        double actual = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getSalary();
+
+        assertEquals(expected, actual);
     }
 
 }
