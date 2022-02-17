@@ -59,10 +59,12 @@ public class EmployeeSystemTest {
             employeeSystemObject.addNewEmployee(newEmployee);
         }
         System.out.println(employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId());
-        employeeSystemObject.removeEmployee(5);
+        int idToRemove = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId();
+        employeeSystemObject.removeEmployee(idToRemove);
+
         boolean iDFiveExists = false;
         for(int i = 0; i<employeeSystemObject.employeeList.size();i++) {
-            if(employeeSystemObject.employeeList.get(i).getId() == 5) {
+            if(employeeSystemObject.employeeList.get(i).getId() == idToRemove) {
                 iDFiveExists = true;
                 break;
             }
