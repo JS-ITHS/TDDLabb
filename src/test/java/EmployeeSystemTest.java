@@ -58,7 +58,7 @@ public class EmployeeSystemTest {
             Employee newEmployee = new Employee("Adam Ant",i, 100);
             employeeSystemObject.addNewEmployee(newEmployee);
         }
-
+        System.out.println(employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId());
         employeeSystemObject.removeEmployee(5);
         boolean iDFiveExists = false;
         for(int i = 0; i<employeeSystemObject.employeeList.size();i++) {
