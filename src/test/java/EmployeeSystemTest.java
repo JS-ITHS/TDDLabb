@@ -142,4 +142,16 @@ public class EmployeeSystemTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void checkRaiseSalaryIndividualEmployeeOverHundredPercentage() {
+            Employee newEmployee = new Employee("Adam Ant",30, 100);
+            employeeSystemObject.addNewEmployee(newEmployee);
+
+        employeeSystemObject.raiseIndividualSalary(101,employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId());
+        double expected = 100;
+        double actual = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getSalary();
+
+        assertEquals(expected, actual);
+    }
+
 }
