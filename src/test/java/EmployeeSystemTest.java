@@ -122,6 +122,17 @@ public class EmployeeSystemTest {
         }
 
         assertFalse(salaryIsRaised);
+    }
+
+    @ParameterizedTest Test
+    @ValueSource (doubles = {1,10,10.1,50,99})
+    public void checkRaiseSalaryIndividualEmployee(double input) {
+
+        for(int i = 0; i<10;i++) {
+            Employee newEmployee = new Employee("Adam Ant",i, 100);
+            employeeSystemObject.addNewEmployee(newEmployee);
+        }
+        employeeSystemObject.raiseIndividualSalary(10);
 
     }
 
