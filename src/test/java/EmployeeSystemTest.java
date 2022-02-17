@@ -13,6 +13,10 @@ public class EmployeeSystemTest {
         employeeSystemObject = new EmployeeSystem();
 
     }
+    @AfterEach
+    public void clearEmployeeSystem() {
+        employeeSystemObject.employeeList.clear();
+    }
     @Test
     public void checkCreateEmployeeSystem() {
         EmployeeSystem testSystem;
@@ -131,7 +135,7 @@ public class EmployeeSystemTest {
             Employee newEmployee = new Employee("Adam Ant",25, 100);
             employeeSystemObject.addNewEmployee(newEmployee);
 
-        employeeSystemObject.raiseIndividualSalary(input,1);
+        employeeSystemObject.raiseIndividualSalary(input,employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId());
         double expected = 100 + (100 * (input/100));
         double actual = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getSalary();
 

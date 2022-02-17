@@ -28,7 +28,14 @@ public class EmployeeSystem {
         }
     }
 
-    public void raiseIndividualSalary(double i) {
+    public void raiseIndividualSalary(double salaryIncreasePercentage, int id) {
+
+            for(int i = 0; i<employeeList.size();i++) {
+                if(employeeList.get(i).getId() == id) {
+                    double newSalary = employeeList.get(i).getSalary() + (employeeList.get(i).getSalary() * (salaryIncreasePercentage/100));
+                    employeeList.get(i).setSalary(newSalary);
+                }
+            }
 
     }
 }
