@@ -2,6 +2,8 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.Collections;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class EmployeeSystemTest {
@@ -17,6 +19,7 @@ public class EmployeeSystemTest {
     public void clearEmployeeSystem() {
         employeeSystemObject.employeeList.clear();
     }
+
     @Test
     public void checkCreateEmployeeSystem() {
         EmployeeSystem testSystem;
@@ -174,6 +177,17 @@ public class EmployeeSystemTest {
 
         assertTrue(salaryStaySame);
 
+    }
+
+    @Test
+    public void removeEmployeeAdditionalTests() {
+        Employee newEmployee = new Employee("Joakim",30, 100);
+        employeeSystemObject.addNewEmployee(newEmployee);
+
+        for(int i = 0; i < employeeSystemObject.employeeList.size(); i++) {
+            employeeSystemObject.removeEmployee(employeeSystemObject.employeeList.size() - 1);
+        }
+        assertEquals(Collections.EMPTY_LIST, employeeSystemObject.employeeList);
     }
 
 }
