@@ -154,4 +154,26 @@ public class EmployeeSystemTest {
         assertEquals(expected, actual);
     }
 
+    @ParameterizedTest
+    @ValueSource (doubles = {-0.1,-10,-15.5,-90.9987,Double.MIN_VALUE})
+    public void checkRaiseSalaryIndividualEmployeeNegativeValue(double input) {
+
+        for(int i = 0; i<10;i++) {
+            Employee newEmployee = new Employee("Adam Ant",i, 100);
+            employeeSystemObject.addNewEmployee(newEmployee);
+            employeeSystemObject.raiseIndividualSalary(input, employeeSystemObject.employeeList.get(i).getId());
+        }
+
+        boolean salaryStaySame = true;
+
+        for(int i = 0; i < employeeSystemObject.employeeList.size();i++) {
+            if(employeeSystemObject.employeeList.get(i).getSalary() != 100) {
+                salaryStaySame = false;
+            }
+        }
+
+        assertTrue(salaryStaySame);
+
+    }
+
 }
