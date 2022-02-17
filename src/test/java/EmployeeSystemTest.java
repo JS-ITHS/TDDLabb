@@ -104,5 +104,26 @@ public class EmployeeSystemTest {
         assertEquals(expected,actual);
     }
 
+    @ParameterizedTest
+    @ValueSource (doubles = {100.1,1000,9999999.999,115,Double.MAX_VALUE})
+
+    public void checkRiseSalaryByMoreThanHundredPercentage(double input) {
+        for(int i = 0; i<10;i++) {
+            Employee newEmployee = new Employee("Adam Ant",i, 100);
+            employeeSystemObject.addNewEmployee(newEmployee);
+        }
+
+        employeeSystemObject.raiseSalary(input);
+        boolean salaryIsRaised = false;
+
+        for(int j = 0; j < employeeSystemObject.employeeList.size();j++) {
+            if(employeeSystemObject.employeeList.get(j).getSalary() != 100) {
+                salaryIsRaised = true;
+            }
+        }
+
+        assertFalse(salaryIsRaised);
+
+    }
 
 }
