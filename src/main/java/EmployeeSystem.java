@@ -18,10 +18,10 @@ public class EmployeeSystem {
         }
     }
 
-    public void raiseSalary(double i) {
-        for(int j = 0; j < employeeList.size();j++){
-            double newSalary = employeeList.get(j).getSalary() + (employeeList.get(j).getSalary() * (i/100));
-            employeeList.get(j).setSalary(newSalary);
+    public void raiseSalary(double salaryIncreasePercentage) {
+        for(int i = 0; i < employeeList.size();i++){
+            double newSalary = employeeList.get(i).getSalary() + (employeeList.get(i).getSalary() * (salaryIncreasePercentage/100));
+            employeeList.get(i).setSalary(newSalary);
         }
     }
 }
