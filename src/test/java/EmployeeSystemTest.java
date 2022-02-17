@@ -62,14 +62,14 @@ public class EmployeeSystemTest {
         int idToRemove = employeeSystemObject.employeeList.get(employeeSystemObject.employeeList.size()-1).getId();
         employeeSystemObject.removeEmployee(idToRemove);
 
-        boolean iDFiveExists = false;
+        boolean iDRemovedExists = false;
         for(int i = 0; i<employeeSystemObject.employeeList.size();i++) {
             if(employeeSystemObject.employeeList.get(i).getId() == idToRemove) {
-                iDFiveExists = true;
+                iDRemovedExists = true;
                 break;
             }
         }
-        assertFalse(iDFiveExists);
+        assertFalse(iDRemovedExists);
     }
 
     @Test
