@@ -74,6 +74,16 @@ public class EmployeeSystemTest {
         }
 
         employeeSystemObject.raiseSalary(10);
+        boolean raisedSalaryByTenPercentage = true;
+        double expected = 110;
+
+        for(int j = 0; j < employeeSystemObject.employeeList.size();j++) {
+            if(employeeSystemObject.employeeList.get(j).getSalary() != expected) {
+                raisedSalaryByTenPercentage = false;
+            }
+
+            assertTrue(raisedSalaryByTenPercentage);
+        }
     }
 
 }
